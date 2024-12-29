@@ -1,0 +1,14 @@
+body{
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(11, 34, 148));
+    height: 100vh; /* Высота окна браузера */
+    margin: 0; /* Убираем отступы */
+}
+
+#text {
+    font-family: Comic Sans, Comic Sans MS, cursive;
+    position: absolut;
+    text-align: center;
+    color: #ffffff;
+    font-size: 25px;
+    background-color: black;
+  }
