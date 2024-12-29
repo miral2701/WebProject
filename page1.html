@@ -3,11 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="style.css">
+
     <title>Document</title>
+
+    <style>
+       
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello</h1>
-    <button id="myButton">Перейти</button>
+    <h1  id="text">Порахувати силу струму</h1>
+
+    <div class="container">
+        <h2>Калькулятор силы тока</h2>
+        <label for="voltage">Напряжение (В):</label>
+        <input type="number" id="voltage" placeholder="Введите значение U" required>
+
+        <label for="resistance">Сопротивление (Ом):</label>
+        <input type="number" id="resistance" placeholder="Введите значение R" required>
+
+        <button onclick="calculateCurrent()">Рассчитать силу тока</button>
+
+        <div class="result" id="result"></div>
+    </div>
+    <button id="myButton">Назад</button>
     <script>
         // Находим кнопку по ID
         const button = document.getElementById('myButton');
@@ -17,6 +63,25 @@
             // Указываем адрес страницы, на которую хотим перейти
             window.location.href = 'http://127.0.0.1:5500/index.html';
         });
+
+
+
+
+        function calculateCurrent() {
+            const voltage = parseFloat(document.getElementById('voltage').value);
+            const resistance = parseFloat(document.getElementById('resistance').value);
+            const resultElement = document.getElementById('result');
+
+            if (!voltage || !resistance || resistance === 0) {
+                resultElement.textContent = "Введите корректные значения (R не может быть 0).";
+                resultElement.style.color = "red";
+                return;
+            }
+
+            const current = voltage / resistance;
+            resultElement.textContent = `Сила тока: ${current.toFixed(2)} А`;
+            resultElement.style.color = "green";
+        }
     </script>
 </body>
 </html>
