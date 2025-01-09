@@ -17,6 +17,11 @@
             border-radius: 10px;
             background-color: #f9f9f9;
         }
+        .container2{
+            width:400px;
+            height:10px;
+            margin:auto;
+        }
         input, button {
             width: 100%;
             padding: 10px,2px;
@@ -24,13 +29,13 @@
             font-size: 16px;
         }
         button {
-            background-color: #4CAF50;
+            background-color:#3B1E54;
             color: white;
             border: none;
             cursor: pointer;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #9B7EBD;
         }
         .result {
             font-weight: bold;
@@ -42,18 +47,20 @@
     <h1  id="text">Порахувати силу струму</h1>
 
     <div class="container">
-        <h2>Калькулятор силы тока</h2>
-        <label for="voltage">Напряжение (В):</label>
-        <input type="number" id="voltage" placeholder="Введите значение U" required>
+        <label for="voltage">Напруга (В):</label>
+        <input type="number" id="voltage" placeholder="Введіть значення U" required>
 
-        <label for="resistance">Сопротивление (Ом):</label>
-        <input type="number" id="resistance" placeholder="Введите значение R" required>
+        <label for="resistance">Опір (Ом):</label>
+        <input type="number" id="resistance" placeholder="Введіть значення R" required>
 
-        <button onclick="calculateCurrent()">Рассчитать силу тока</button>
+        <button onclick="calculateCurrent()">Розрахувати</button>
 
         <div class="result" id="result"></div>
     </div>
-    <button id="myButton">Назад</button>
+    <br />
+    <div class ="container2">
+    <button id="myButton"  class="button-36" role="button">Назад</button>
+    </div>
     <script>
         // Находим кнопку по ID
         const button = document.getElementById('myButton');
@@ -73,13 +80,13 @@
             const resultElement = document.getElementById('result');
 
             if (!voltage || !resistance || resistance === 0) {
-                resultElement.textContent = "Введите корректные значения (R не может быть 0).";
+                resultElement.textContent = "Введіть коректні значення";
                 resultElement.style.color = "red";
                 return;
             }
 
             const current = voltage / resistance;
-            resultElement.textContent = `Сила тока: ${current.toFixed(2)} А`;
+            resultElement.textContent = `Сила струму: ${current.toFixed(2)} А`;
             resultElement.style.color = "green";
         }
     </script>

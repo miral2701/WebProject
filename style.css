@@ -1,6 +1,6 @@
 body{
-    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(11, 34, 148));
-    height: 100vh; /* Высота окна браузера */
+    background: linear-gradient(45deg, #3B1E54, #D4BEE4);
+    height: 110vh; /* Высота окна браузера */
     margin: 0; /* Убираем отступы */
 }
 
@@ -10,15 +10,69 @@ body{
     text-align: center;
     color: #ffffff;
     font-size: 25px;
-    background-color: black;
+    background-color: #3B1E54;
   }
-  .box {
-    width: 15em;
-    border: 1px solid #333;
+  
+  
+  .mainbox {
+    width: 1000px;
+    height: auto;
     padding: 8px 12px;
-    background-image: linear-gradient(180deg, #000000, #ddd 40%, #ccc);
     align-items: center;
-    max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    background-color: #EEEEEE;
+    margin-bottom: 10px;
+padding-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 10px;
   }
+
+  header{
+    background-color: #3B1E54;
+
+  }
+.parts{
+  background-color: #3B1E54;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+
+}
+
+/* CSS */
+.button-36 {
+  background-image: linear-gradient(92.88deg, #3B1E54 9.16%, #5b2e83 43.89%, #6f399f 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 4rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display:block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.button-36:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+
+footer {
+  text-align: center;
+  padding: 5px;
+  background-color:  #D4BEE4;
+  color: #000;
+}
