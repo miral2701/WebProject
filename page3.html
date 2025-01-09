@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+
+    <style>
+       
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .container2{
+            width:400px;
+            height:10px;
+            margin:auto;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px,2px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        button {
+            background-color:#3B1E54;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #9B7EBD;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1  id="text">Порахувати силу тяжіння</h1>
+
+    <div class="container">
+        <label for="voltage">Маса(кг):</label>
+        <input type="number" id="voltage" placeholder="Введіть значення m" required>
+
+        
+
+        <button onclick="calculateCurrent()">Розрахувати</button>
+
+        <div class="result" id="result"></div>
+    </div>
+    <br />
+    <div class ="container2">
+    <button id="myButton"  class="button-36" role="button">Назад</button>
+    </div>
+    <script>
+        // Находим кнопку по ID
+        const button = document.getElementById('myButton');
+
+        // Добавляем обработчик события
+        button.addEventListener('click', function() {
+            // Указываем адрес страницы, на которую хотим перейти
+            window.location.href = 'http://127.0.0.1:5500/index.html';
+        });
+
+
+
+
+        function calculateCurrent() {
+            const voltage = parseFloat(document.getElementById('voltage').value);
+            const resultElement = document.getElementById('result');
+
+            if (voltage ==' ') {
+                resultElement.textContent = "Введіть коректні значення";
+                resultElement.style.color = "red";
+                return;
+            }
+            const current = voltage *9.8;
+
+            resultElement.textContent = `Сила тяжіння: ${current.toFixed(2)} Н`;
+            resultElement.style.color = "green";
+        }
+    </script>
+</body>
+</html>
