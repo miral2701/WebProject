@@ -76,3 +76,26 @@ footer {
   background-color:  #D4BEE4;
   color: #000;
 }
+
+
+
+.container {
+  display: flex;
+  justify-content: space-between; /* Распределяет элементы */
+  align-items: center; /* Выравнивание по вертикали */
+  width: 100%;
+}
+
+.left {
+  width: 200px;
+  text-align: left;
+  padding:3px;
+}
+
+.center {
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Центрирование */
+}
